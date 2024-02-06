@@ -13,8 +13,8 @@
         <b-form-input id="año" v-model="año" type="number" :min="1900" :max="new Date().Año()" required></b-form-input>
       </b-form-group>
 
-      <b-form-group label="Serie:" label-for="numeroSerie">
-        <b-form-input id="numeroSerie" v-model="numeroSerie" type="text" pattern="[A-Z]{4}\d{3}-\d{2}[A-Z]{2}" required></b-form-input>
+      <b-form-group label="Serie:" label-for="serie">
+        <b-form-input id="serie" v-model="serie" type="text" pattern="[A-Z]{4}\d{3}-\d{2}[A-Z]{2}" required></b-form-input>
       </b-form-group>
 
       <b-button type="submit" variant="primary">Enviar</b-button>
@@ -34,7 +34,7 @@ export default {
       marca: '',
       modelo: '',
       año: null,
-      numeroSerie: '',
+      serie: '',
       showResult: false, 
       formData: {}, 
     };
@@ -49,7 +49,7 @@ export default {
         marca: this.marca,
         modelo: this.modelo,
         año: this.año,
-        numeroSerie: this.numeroSerie,
+        serie: this.serie,
       };
     },
     onReset() {
@@ -58,7 +58,7 @@ export default {
       this.marca = '';
       this.modelo = '';
       this.año = null;
-      this.numeroSerie = '';
+      this.serie = '';
     },
     validateForm() {
       if (!/^[A-Za-z0-9]+$/.test(this.marca) || !/^[A-Za-z0-9]+$/.test(this.modelo)) {
@@ -69,7 +69,7 @@ export default {
         alert('Año de fabricación 1900 0 más');
         return false;
       }
-      if (!/^[A-Z]{4}\d{3}-\d{2}[A-Z]{2}$/.test(this.numeroSerie)) {
+      if (!/^[A-Z]{4}\d{3}-\d{2}[A-Z]{2}$/.test(this.serie)) {
         alert('FORMATO INCORRECTO');
         return false;
       }
