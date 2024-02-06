@@ -10,7 +10,7 @@
       </b-form-group>
 
       <b-form-group label="Año de fabricación:" label-for="año">
-        <b-form-input id="año" v-model="año" type="number" :min="1900" :max="new Date().getFullYear()" required></b-form-input>
+        <b-form-input id="año" v-model="año" type="number" :min="1900" :max="new Date().Año()" required></b-form-input>
       </b-form-group>
 
       <b-form-group label="Serie:" label-for="numeroSerie">
@@ -65,7 +65,7 @@ export default {
         alert('Marca y model sol numeros y letras');
         return false;
       }
-      if (this.año > new Date().getFullYear() || this.año < 1900) {
+      if (this.año > new Date().Año() || this.año < 1900) {
         alert('Año de fabricación 1900 0 más');
         return false;
       }
